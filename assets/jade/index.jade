@@ -1,0 +1,85 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Agency Theme
+		link(href="assets/css/bootstrap.min.css" rel="stylesheet")
+		link(rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css")
+		link(href="assets/css/main.css" rel="stylesheet")
+	body
+		include variables
+		include mixins
+		header#HeroImage
+			.header-top-area
+				nav.navbar(role="navigation")
+					.navbar-header
+						button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						a.navbar-brand(href="#") Start Bootstrap
+					#navbar-inverse.collapse.navbar-collapse
+						ul.nav.navbar-nav.navbar-right
+							li.active: a(href="#") Home
+							li: a(href="#Services") Services
+							li: a(href="#Portfolio") Portfolio
+							li: a(href="#About") About
+							li: a(href="#Team") Team
+							li: a(href="#contact") Contact
+				.hero-text.text-center
+					h3 Welcome to our Studio!
+					h1 IT'S NICE TO MEET YOU
+					buttom.btn TELL ME MORE
+
+		+article('SERVICES')
+			.container
+				.row
+					+list-service('comerce','E-Commerce')
+					+list-service('responsive','Responsive Design')
+					+list-service('web', 'Web Security')
+
+		+article('PORTFOLIO')
+			.container
+				+portfolio-row
+
+		+article('ABOUT')
+			.container
+				+momment-right("2009-2011", "Our amble Beginigs", "photo1")
+				+momment-left("March 2011", "An agency is born", "photo2")
+				+momment-right("December 2012", "Transition to full service", "photo3")
+				+momment-left("July 2014", "Phase two Expansion", "photo4")
+
+		+article('OUR AWESOME TEAM')
+			.container
+				.row
+					+teammember("member1", "Kay Garland")
+					+teammember("member2", "Kay Garland")
+					+teammember("member3", "Kay Garland")
+				.description-team
+					p  Ab esse, dolorem laborum error facilis provident unde impedit quia magnam, maxime molestias quod, alias natus.
+
+		section#marks
+			+marks('mark1')
+			+marks('mark2')
+			+marks('mark3')
+			+marks('mark4')
+
+		+article('CONTACT US')
+			.container
+				row
+					.col-md-6
+						form
+							+input("Your name")
+							+input("Your name")
+							+input("Your name")
+					.col-md-6
+						form
+							+textarea
+				button.btn Send Message
+		
+		footer
+		
+	scrip(src="https://code.jquery.com/jquery-1.10.2.min.js")
+	script(type="text/javascript" src="./js/bootstrap.min.js")

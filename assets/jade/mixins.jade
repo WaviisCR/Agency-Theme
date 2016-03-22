@@ -1,0 +1,132 @@
+include variables
+mixin section-title ()
+	h1= s
+	p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+mixin article(tittle)
+	section.text-center
+		.tittle
+			h2= tittle
+				
+			if block
+				block
+			else
+				p  Lorem ipsum dolor sit amet consectetur.
+
+mixin icon(iconservice)
+	case iconservice
+		when 'comerce'
+			i.fa.fa-shopping-cart
+		when 'responsive'
+			i.fa.fa-laptop
+		when 'web'
+			i.fa.fa-lock
+mixin list-service(iconservice, servicetittle)
+	.col-md-4
+		+icon(iconservice)
+		h3= servicetittle
+		p= loremservices
+
+mixin imgbox(imgbox)
+	case imgbox
+		when 'img1'
+			img(src="img/portfolio/roundicons.png")
+		when 'img2'
+			img(src="img/portfolio/startup-framework.png")
+		when 'img3'
+			img(src="img/portfolio/treehouse-preview.png")
+		when 'img4'
+			img(src="img/portfolio/golden-preview.png")
+		when 'img5'
+			img(src="img/portfolio/escape-preview.png")
+		when 'img6'
+			img(src="img/portfolio/dreams-preview.png")
+mixin img-descrip(imgbox, portfoliotittle, portfoliosubtit)
+	.col-md-4
+		.img-box
+			+imgbox(imgbox)
+		.text-box
+			h3= portfoliotittle
+			span.subtit= portfoliosubtit
+mixin portfolio-row()
+	.row
+		+img-descrip("img1", "Round Icons", "Graphic Design")
+		+img-descrip("img2", "Starup Framework", "Web Desing")
+		+img-descrip("img3", "Treehouse", "Web Desing")
+	.row
+		+img-descrip("img4", "Golden", "Web Desing")
+		+img-descrip("img5", "Escape", "Web Desing")
+		+img-descrip("img6", "Dreams", "Web Desing")
+
+mixin photomomment(photomomment)
+	case photomomment
+		when 'photo1'
+			img(src="img/about/1.jpg")
+		when 'photo2'
+			img(src="img/about/2.jpg")
+		when 'photo3'
+			img(src="img/about/3.jpg")
+		when 'photo4'
+			img(src="img/about/4.jpg")
+mixin momment-right(datemomment, tittlemomment, photomomment)
+	.row.clearfix
+		.col-md-5
+			.text-moment.text-right
+				h3= datemomment
+				span= tittlemomment
+				p= parragraph
+		.col-md-2
+			.img-moment.float-left
+				+photomomment(photomomment)
+mixin momment-left(datemomment, tittlemomment, photomomment)
+	.row.clearfix
+		.col-md-offset-5.col-md-2
+			.img-moment.float-right
+				+photomomment(photomomment)
+		.col-md-5
+			.text-moment.text-left
+				h3= datemomment
+				span= tittlemomment
+				p= parragraph
+
+mixin img-member(imgmember)
+	case imgmember
+		when 'member1'
+			img(src="img/team/1.jpg")
+		when 'member2'
+			img(src="img/team/2.jpg")
+		when 'member3'
+			img(src="img/team/3.jpg")
+mixin teammember(imgmember, membertittle)
+	.col-md-4
+		+img-member(imgmember)
+		h3= membertittle
+		p= loremservices
+		.social
+			a
+				i.fa.fa-twitter
+			a
+				i.fa.fa-facebook
+			a
+				i.fa.fa-linkedin
+
+mixin marks(marks)
+	case marks
+		when 'mark1'
+			img(src="img/logos/envato.jpg")
+		when 'mark2'
+			img(src="img/logos/designmodo.jpg")
+		when 'mark3'
+			img(src="img/logos/themeforest.jpg")
+		when 'mark4'
+			img(src="img/logos/creative-market.jpg")
+
+mixin input(pholder)
+	.form-group
+		input.form-control(
+			placeholder= pholder
+		)
+mixin textarea()
+	.form-group
+		textarea.form-control(
+			placeholder="Your message"
+		)
