@@ -1,26 +1,225 @@
+/*VARS*/
+/*COLORS*/
+$soft-orange: #FED136;
+$white: #ffffff;
+$silverlight: #F7F7F7;
+$dark-gray: #222222;
+$softsilver:#777777;
+
+/*MIXIN*/
+@mixin circle($border: silver) {
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: $border;
+    background-color: $soft-orange;
+}
+
+/*UTIL*/
+.margin-t-b {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/*COMMON*/
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: "Roboto Slab";
+    color:$softsilver;
+}
+
+button {
+    background-color: $soft-orange;
+    border-radius: 5px;
+    color: $white;
+    margin:1%;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat";
+}
+section {
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+    .tittle {
+        margin-top: 3%;
+        margin-bottom: 3%;
+
+
+        p {
+            font-family: "Droid Serif";
+            font-style: italic;
+        }
+    }
+}
+
+
+#portfolio, #team {
+    background-color: $silverlight;
+    .text-box{
+        background-color: white;
+        padding:3%;
+        h3{
+            margin:0 auto;
+        }
+        span{
+            font-family: "Droid Serif";
+            font-style:italic;
+            color:$softsilver;
+        }
+    }
+}
+
+
+
+.social {
+    i {
+        background-color: $dark-gray;
+        color: $white;
+        padding: 3%;
+        width: 2.5em;
+        margin: 1%;
+        border-radius: 50%;
+    }& i:hover{
+        background-color:$white;
+        color:$dark-gray;
+    }
+}
+
 /*HEADER*/
 #HeroImage {
     background: url(../../img/header-bg.jpg);
+    background-size: cover;
     color: white;
+
+    .navbar {
+        .navbar-brand {
+            font-family: "Kaushan Script";
+            color: $soft-orange;
+            font-size: 2em;
+        }
+
+        ul > li > a {
+            font-family: "Montserrat";
+            color: white;
+        }
+
+        & ul > li > a:hover {
+            background-color: $soft-orange;
+            color: black;
+        }
+    }
 
     .hero-text {
         padding-top: 10%;
         padding-bottom: 10%;
+
+        h3 {
+            font-family: "Droid Serif", sans-serif;
+            font-style: italic;
+        }
+
+        h1 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 5em;
+            font-weight: 700;
+        }
+    }
+}
+
+/*SERVICES*/
+#services {
+    i {
+        background: $soft-orange;
+        color: white;
+        padding: 6%;
+        width: 1.8em;
+        height: 1.8em;
+        border-radius: 50%;
     }
 
-    button {
-        background-color: #FED136;
-        border-radius: 5px;
+    & i:hover {
+        background-color: white;
+        color: $soft-orange;
+    }
+}
+
+/*PORFOLIO*/
+#portfolio {
+    img {
+        width: 100%;
     }
 }
 
 /*ABOUT*/
+#about {
+    .img-moment {
+        @include circle;
+
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        p {
+            padding: 18%;
+            font-size: 155%;
+            margin: 0%;
+            color:$white;
+        }
+    }
+    .text-moment{
+        h3{
+            margin:0 auto;
+        }
+        span{
+            font-family: "Montserrat"
+        }
+    }
+}
+
 .about::before {
     content: "";
-    border: 2px solid gray;
+    border: 1px solid silver;
     position: absolute;
-    top: 1450px;
+    top: 525%;
     left: 50%;
-    height: 500px;
+    height: 55em;
     z-index: -1;
+}
+
+/*TEAM*/
+#team {
+    .img-moment {
+        img {
+            width: 65%;
+            border-radius: 50%;
+            border: 5px white solid;
+        }
+    }
+    .description-team{
+        padding:2% 10%;
+    }
+}
+
+/*MARKS*/
+#marks{
+    img{
+        margin: 1%;
+    }
+}
+/*CONTACT*/
+#contact{
+    background-color:$dark-gray;
+    color:$white;
+}
+/*FOOTER*/
+footer{
+    font-family: "Montserrat";
+    a{
+        color: $soft-orange;
+    }
 }

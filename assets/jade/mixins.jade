@@ -1,20 +1,18 @@
-include variables
-mixin section-title ()
+mixin section-title()
 	h1= s
 	p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 mixin article(tittle)
 	.tittle
 		h2= tittle
 		p  Lorem ipsum dolor sit amet consectetur.
-
 mixin icon(iconservice)
 	case iconservice
 		when 'comerce'
-			i.fa.fa-shopping-cart
+			i.fa.fa-shopping-cart.fa-4x
 		when 'responsive'
-			i.fa.fa-laptop
+			i.fa.fa-laptop.fa-4x
 		when 'web'
-			i.fa.fa-lock
+			i.fa.fa-lock.fa-4x
 mixin list-service(iconservice, servicetittle)
 	.col-md-4
 		+icon(iconservice)
@@ -36,7 +34,7 @@ mixin imgbox(imgbox)
 		when 'img6'
 			img(src="img/portfolio/dreams-preview.png")
 mixin img-descrip(imgbox, portfoliotittle, portfoliosubtit)
-	.col-md-4
+	.col-md-4.margin-t-b
 		.img-box
 			+imgbox(imgbox)
 		.text-box
@@ -63,7 +61,7 @@ mixin photomomment(photomomment)
 		when 'photo4'
 			img(src="img/about/4.jpg")
 mixin momment-right(datemomment, tittlemomment, photomomment)
-	.row.clearfix
+	.row.clearfix.margin-t-b
 		.col-md-5
 			.text-moment.text-right
 				h3= datemomment
@@ -73,7 +71,7 @@ mixin momment-right(datemomment, tittlemomment, photomomment)
 			.img-moment.float-left
 				+photomomment(photomomment)
 mixin momment-left(datemomment, tittlemomment, photomomment)
-	.row.clearfix
+	.row.clearfix.margin-t-b
 		.col-md-offset-5.col-md-2
 			.img-moment.float-right
 				+photomomment(photomomment)
@@ -93,7 +91,8 @@ mixin img-member(imgmember)
 			img(src="img/team/3.jpg")
 mixin teammember(imgmember, membertittle)
 	.col-md-4
-		+img-member(imgmember)
+		.img-moment
+			+img-member(imgmember)
 		h3= membertittle
 		p= loremservices
 		.social
@@ -117,11 +116,12 @@ mixin marks(marks)
 
 mixin input(pholder)
 	.form-group
-		input.form-control(
+		input.input-lg.form-control(
 			placeholder= pholder
 		)
 mixin textarea()
 	.form-group
 		textarea.form-control(
 			placeholder="Your message"
+			rows=8
 		)
