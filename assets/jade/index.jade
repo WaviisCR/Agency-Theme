@@ -33,25 +33,29 @@ html(lang="es")
 					h1 IT'S NICE TO MEET YOU
 					button.btn TELL ME MORE
 
-		+article('SERVICES')
-			.container
-				.row
-					+list-service('comerce','E-Commerce')
-					+list-service('responsive','Responsive Design')
-					+list-service('web', 'Web Security')
+		section#about.text-center
+			+article('SERVICES')
+				.container
+					.row
+						+list-service('comerce','E-Commerce')
+						+list-service('responsive','Responsive Design')
+						+list-service('web', 'Web Security')
 
-		+article('PORTFOLIO')
+		section#portfolio.text-center
+			+article('PORTFOLIO')
 			.container
 				+portfolio-row
-
-		+article('ABOUT')
-			.container
+		
+		section#about.text-center
+			+article('ABOUT')
+			.container.about
 				+momment-right("2009-2011", "Our amble Beginigs", "photo1")
 				+momment-left("March 2011", "An agency is born", "photo2")
 				+momment-right("December 2012", "Transition to full service", "photo3")
 				+momment-left("July 2014", "Phase two Expansion", "photo4")
-
-		+article('OUR AWESOME TEAM')
+		
+		section#team.text-center
+			+article('OUR AWESOME TEAM')
 			.container
 				.row
 					+teammember("member1", "Kay Garland")
@@ -66,7 +70,7 @@ html(lang="es")
 			+marks('mark3')
 			+marks('mark4')
 
-		+article('CONTACT US')
+			+article('CONTACT US')
 			.container
 				row
 					.col-md-6

@@ -3,14 +3,9 @@ mixin section-title ()
 	h1= s
 	p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 mixin article(tittle)
-	section.text-center
-		.tittle
-			h2= tittle
-				
-			if block
-				block
-			else
-				p  Lorem ipsum dolor sit amet consectetur.
+	.tittle
+		h2= tittle
+		p  Lorem ipsum dolor sit amet consectetur.
 
 mixin icon(iconservice)
 	case iconservice

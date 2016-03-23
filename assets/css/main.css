@@ -9,4 +9,14 @@
     background-color: #FED136;
     border-radius: 5px; }
 
+/*ABOUT*/
+.about::before {
+  content: "";
+  border: 2px solid gray;
+  position: absolute;
+  top: 1450px;
+  left: 50%;
+  height: 500px;
+  z-index: -1; }
+
 /*# sourceMappingURL=main.css.map */
